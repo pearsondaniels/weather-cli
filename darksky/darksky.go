@@ -25,4 +25,5 @@ func Forecast(latitude float64, longitude float64) {
 
 	println("Temperature for " + appconfig.Config.Home.City + ":")
 	fmt.Printf("%.1f", forecast.Currently.Temperature)
+	print("˚F\n")
 }
