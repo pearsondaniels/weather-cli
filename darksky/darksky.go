@@ -21,7 +21,21 @@ func Forecast(city string, latitude float64, longitude float64) {
 		log.Fatal(err)
 	}
 
-	println("Temperature for " + city + ":")
+	println("Weather report for " + city + ":")
+
+	print("Temperature: ")
 	fmt.Printf("%.1f", forecast.Currently.Temperature)
 	print("˚F\n")
+
+	print("Precipitation: ")
+	fmt.Printf("%.2f", forecast.Currently.PrecipIntensity*100)
+	print("%\n")
+
+	print("Wind Speed: ")
+	fmt.Printf("%.1f", forecast.Currently.WindSpeed)
+	print("mph\n")
+
+	print("Humidity: ")
+	fmt.Printf("%.1f", forecast.Currently.Humidity*100)
+	print("%\n")
 }
