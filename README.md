@@ -8,9 +8,10 @@ This is what goes inside it:
 ```
 {
     "home":{
-        "city":"Arlington",
-        "state":"TX","latitude":"32.7357",
-        "longitude":"-97.1081"
+        "city":"",
+        "state":"",
+        "latitude":"",
+        "longitude":""
     }
 }
 ```
