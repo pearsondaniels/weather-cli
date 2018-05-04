@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"log"
 
-	"../appconfig"
-
 	"github.com/shawntoffel/darksky"
 )
 
 //Forecast retrieves weather forecast for given latitude and longitude
-func Forecast(latitude float64, longitude float64) {
+func Forecast(city string, latitude float64, longitude float64) {
 	client := darksky.New("e812d94640053e7d3f93bd055cfb246a")
 	request := darksky.ForecastRequest{}
 
@@ -23,7 +21,7 @@ func Forecast(latitude float64, longitude float64) {
 		log.Fatal(err)
 	}
 
-	println("Temperature for " + appconfig.Config.Home.City + ":")
+	println("Temperature for " + city + ":")
 	fmt.Printf("%.1f", forecast.Currently.Temperature)
 	print("˚F\n")
 }
