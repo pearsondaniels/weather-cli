@@ -42,16 +42,16 @@ func SetHomeLocale(city string, state string, latitude string, longitude string)
 
 	c, err := json.Marshal(Config)
 	if err != nil {
-		message = "Failed to update home locale"
+		message = "Failed to update home locale."
 	}
 
 	err = ioutil.WriteFile("./appconfig/config.json", c, 0644)
 	if err != nil {
-		message = "Failed to update home locale"
+		message = "Failed to update home locale."
 	}
 
 	if message == "" {
-		message = "Updated home locale successfully"
+		message = "Updated home locale successfully."
 	}
 	println(message)
 	return message, nil
