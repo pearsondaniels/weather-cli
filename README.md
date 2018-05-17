@@ -10,11 +10,11 @@ Make sure you have your GOPATH and GOBIN set up
 Run `go install weather.go` inside the main directory
 
 ## Basic Usage
-#### Gets weather report for home locale
+#### Get weather report for home locale
 ```
 $ weather
 ```
-#### Updates home locale
+#### Update home locale
 ```
 $ weather update home
 ```
