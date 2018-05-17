@@ -22,14 +22,17 @@ type Configuration struct {
 //Config is the golbal configuration variable that holds all config values
 var Config Configuration
 
-//GetConfig reads config.json and stores the values in the config struct
-func GetConfig() {
-	configData, err := ioutil.ReadFile("./appconfig/config.json")
+//LoadConfig reads config.json and stores the values in the config struct
+func LoadConfig() {
+	configData, err := ioutil.ReadFile("./config.json")
 	if err != nil {
-		log.Fatal(err)
+		return
 	}
 
 	err = json.Unmarshal(configData, &Config)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 //SetHomeLocale sets the latitude and longitude of the user input
@@ -45,7 +48,7 @@ func SetHomeLocale(city string, state string, latitude string, longitude string)
 		message = "Failed to update home locale."
 	}
 
-	err = ioutil.WriteFile("./appconfig/config.json", c, 0644)
+	err = ioutil.WriteFile("./config.json", c, 0644)
 	if err != nil {
 		message = "Failed to update home locale."
 	}
