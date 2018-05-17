@@ -31,11 +31,11 @@ func Forecast(city string, latitude float64, longitude float64) {
 	fmt.Printf("%.2f", forecast.Currently.PrecipIntensity*100)
 	print("%\n")
 
-	print("Wind Speed: ")
-	fmt.Printf("%.1f", forecast.Currently.WindSpeed)
-	print("mph\n")
+	// print("Wind Speed: ")
+	fmt.Printf("Wind Speed: %.1fmph\n", forecast.Currently.WindSpeed)
+	// print("mph\n")
 
-	print("Humidity: ")
-	fmt.Printf("%.1f", forecast.Currently.Humidity*100)
-	print("%\n")
+	// print("Humidity: ")
+	fmt.Printf("Humidity: %.1f%%\n", forecast.Currently.Humidity*100)
+	// print("%\n")
 }
