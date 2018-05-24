@@ -24,7 +24,7 @@ var Config Configuration
 
 //LoadConfig reads config.json and stores the values in the config struct
 func LoadConfig() {
-	configData, err := ioutil.ReadFile("$GOPATH/src/github.com/pearsondaniels/weather-cli/config.json")
+	configData, err := ioutil.ReadFile("./config.json")
 	if err != nil {
 		return
 	}
@@ -48,7 +48,7 @@ func SetHomeLocale(city string, state string, latitude string, longitude string)
 		message = "Failed to update home locale."
 	}
 
-	err = ioutil.WriteFile("$GOPATH/src/github.com/pearsondaniels/weather-cli/config.json", c, 0644)
+	err = ioutil.WriteFile("./config.json", c, 0644)
 	if err != nil {
 		message = "Failed to update home locale."
 	}
