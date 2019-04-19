@@ -1,3 +1,5 @@
+NOTE: This is no longer being maintained, and will require fixes to work as intended.
+
 # weather-cli
 Weather report command line application written in Go
 
